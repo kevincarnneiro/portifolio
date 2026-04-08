@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --bg: hsl(220, 20%, 6%);
+    --bg-card: hsl(220, 18%, 10%);
+    --bg-card-50: hsla(220, 18%, 10%, 0.5);
+    --fg: hsl(150, 10%, 85%);
+    --fg-muted: hsl(220, 10%, 55%);
+    --green: hsl(142, 72%, 50%);
+    --green-dark: hsl(220, 20%, 6%);
+    --cyan: hsl(180, 60%, 45%);
+    --border: hsl(220, 15%, 18%);
+    --radius: 0.5rem;
+}
+
+.projeto-hero {
+  padding: 6rem  1rem;
+}
+
+/* .bnt-voltar {
+  position: relative;
+  bottom: 20px;
+} */
+.bnt-voltar { 
+  display: inline-flex;
+  /* align-items: center; */
+  /* gap: 0.5rem; Espaço entre ícone e texto */
+  /* padding: 0.6rem 1.2rem; O padding define o tamanho, sem width/height fixos */
+  /* border-radius: 50px; */
+  /* border: 1px solid hsla(142, 72%, 50%, 0.3); */
+  /* background: hsla(142, 72%, 50%, 0.05); */
+  /* color: var(--green); */
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  margin-bottom: 2rem;
+  
+} 
+.bnt-voltar:hover {
+  background: hsla(142, 72%, 50%, 0.15);
+  border-color: var(--green);
+  box-shadow: 0 0 15px hsla(142, 72%, 50%, 0.2);
+  color: var(--fg);
+}
+/* Animação do Ícone */
+.bnt-voltar:hover svg {
+  transform: translateX(-4px); 
+}
+
+/* Layout Principal */
+
+
+.flex { 
+  display: flex; 
+  gap: 3rem;
+  align-items: flex-start;
+  margin-top: -100px;
+} 
+
+/* Menu Lateral */
+.projetos_grafana_menu { 
+  flex: 0 0 280px;
+  display: flex; 
+  flex-direction: column; 
+  gap: 0.5rem;
+  border-right: 1px solid var(--border); 
+  padding-right: 2rem;
+  position: sticky; /* Mantém o menu visível ao rolar */
+  top: 6rem;
+  height: fit-content;
+} 
+
+.title_projeto { 
+  font-family: 'JetBrains Mono', monospace; 
+  color: var(--fg-muted); 
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  transition: all 0.3s;
+  display: block;
+} 
+
+.title_projeto.active {
+  color: var(--green);
+  background: hsla(142, 72%, 50%, 0.1);
+  border: 1px solid hsla(142, 72%, 50%, 0.2);
+}
+
+.lucide-circle-arrow-left-icon  {
+  vertical-align: middle;
+}
+
+/*############## CONTEUDOO ################################################################ */
+
+
+
+.projeto {
+    padding: 2.5rem;
+    border-radius: var(--radius);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    margin-bottom: 3rem;
+}
+
+
+/* TITULO E DESCRICÃO */
+.title-projeto_conteudo {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    font-family: 'JetBrains Mono', monospace; 
+}
+.iconeTitulo {
+  vertical-align: middle;
+}
+
+.descricao_projeto {
+  font-family: 'JetBrains Mono', monospace; 
+  color: var(--fg-muted);
+}
+
+/* TAGS */
+.project-tags {
+      display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+.project-tags span {
+   font-family: 'JetBrains Mono', monospace; 
+    padding: 0.3rem 0.8rem;
+    font-size: 0.75rem;
+    border-radius: 50px;
+    background: rgba(0, 255, 136, 0.15);
+    color: #00ff88;
+    border: 1px solid rgba(0, 255, 136, 0.2);
+}
+
+
+/* Seções de Desenvolvimento */
+.desenvolvimento_container {
+    display: flex;
+    flex-direction: column;
+    font-family: 'JetBrains Mono', monospace; 
+    color: var(--fg);
+}
+
+.desenvolvimento_container h3 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+    color: var(--fg);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.desenvolvimento_container p {
+  margin: 1rem 0 1rem 0;
+}
+
+.code {
+    background: #0a0a0f;
+    border: 1px solid #2a2a3e;
+    border-radius: 10px;
+    padding: 1.2rem;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+}
+.code-header {
+    font-size: 0.75rem;
+    color: var(--green);
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.code pre {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: var(--fg);
+    white-space: pre-line;
+}
+
+
+.desenvolvimento_container img { 
+    width: 100%;
+    justify-self: normal;
+    margin-top: 1.25rem;
+    border-radius: 4px;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    object-fit: contain; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: zoom-in;
+
+}
+
+/* zoom img */
+.desenvolvimento_container img:hover {
+     transform: scale(1.05); 
+    filter: grayscale(0);
+    box-shadow: 0 15px 45px rgba(0, 255, 136, 0.2);
+    z-index: 5;
+    position: relative;
+}
+.desenvolvimento_container .descricao_problema {
+    color: var(--fg-muted);
+    font-size: 14px;
+}
+
+/* Solução (Dashboard) */
+
+.dash-preview {
+    background: var(--bg);
+    padding: 1rem;
+    border-radius: var(--radius);
+    border: 1px solid hsla(142, 72%, 50%, 0.15);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    width: 100%;
+    border-radius: 4px;
+    display: block;
+}
+
+
+/* Resultados Estratégicos */
+.lista-resultados {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.lista-resultados li {
+    display: flex;
+    gap: 1.25rem;
+    font-size: 0.95rem;
+    color: var(--fg-muted);
+    background: hsla(220, 18%, 12%, 0.6);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    line-height: 1.6;
+    transition: border-color 0.3s;
+}
+
+.lista-resultados li:hover {
+    border-color: hsla(142, 72%, 50%, 0.3);
+}
+
+/* BOLINHAS NA FRENTE DO TEXTO */
+
+.marker {
+    flex-shrink: 0;
+    width: 10px;
+    height: 10px;
+    background: var(--green);
+    border-radius: 2px;
+    margin-top: 6px;
+    box-shadow: 0 0 12px var(--green);
+}
+
+
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .flex {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .projetos_grafana_menu {
+    flex: none;
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding-right: 0;
+    padding-bottom: 1.5rem;
+    position: static;
+  }
+
+  .projeto_conteudo{
+    display: flex;
+    flex-direction: column;
+    max-width: 768px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 640px) {
+    .projeto_conteudo{
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+}

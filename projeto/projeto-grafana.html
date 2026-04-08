@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboards Grafana | Kevin Carneiro</title>
+  <meta name="description"
+    content="Repositório de dashboards Grafana para monitoramento de impressoras, servidores, links e firewalls." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="projeto.css" />
+</head>
+
+<body>
+
+  <!-- ========================================
+       NAVBAR (mesmo da index)
+  ======================================== -->
+  <!--=============== NAVBAR ====================-->
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-shield-half-icon lucide-shield-half">
+          <path
+            d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+          <path d="M12 22V2" />
+        </svg>
+        KC</a>
+      <div class="navbar-links">
+        <a href="./index.html#sobre">Sobre</a>
+        <a href="./index.html#skills">Skills</a>
+        <a href="./index.html##projetos">Projetos</a>
+        <a href="./index.html#contato">Contato</a>
+
+
+      </div><!--navbar-links-->
+      <button class="navbar-toggle" id="navbar-toggle" aria-label="Menu">☰</button>
+    </div>
+
+    </div><!--container-->
+
+    <div class="navbar-mobile" id="navbar-mobile">
+      <a href="./index.html#sobre">Sobre</a>
+      <a href="./index.html#skills">Skills</a>
+      <a href="./index.html##projetos">Projetos</a>
+      <a href="./index.html#contato">Contato</a>
+    </div>
+  </nav>
+
+
+
+
+  <section class="projeto-hero">
+    <div class="container">
+      <div class="buttonVoltar">
+        
+      <a href="index.html#projetos" class="bnt-voltar">
+        <svg style="vertical-align: middle;" width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M15 20L7 12L15 4" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+        </a>
+        </div>
+      <h2 class="section-title"> <span class="text-green">$</span> ls ./projetos_grafana</h2>
+      <div class="section-line"></div>
+    </div><!--container-->
+  </section><!--projeto-hero-->
+
+
+
+
+
+  <!-- ========================================
+       MENU LATERAL
+  ======================================== -->
+
+
+  <div class="flex container">
+
+    <aside class="projetos_grafana_menu">
+      <a class="title_projeto active" href="">Monitoramento de Impressoras</a>
+      <a class="title_projeto" href="#projetomikrotik">Monitoramento Mikrotik</a>
+      <a class="title_projeto" href="#monitoraWindows">Servidores Windows</a>
+      <a class="title_projeto" href="">Monitoramento de Firewalls</a>
+    </aside>
+
+
+
+    <!-- ========================================
+       PROJETOS
+     ======================================== -->
+    <section class="projeto_conteudo">
+
+
+      <!-- ========================================
+        PROJETO IMPRESSORA
+        ======================================== -->
+
+      <div class="printProject projeto" id="projetoImpressora">
+        <h2 class="title-projeto_conteudo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-printer-icon lucide-printer iconeTitulo">
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+            <path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6" />
+            <rect x="6" y="14" width="12" height="8" rx="1" />
+          </svg>
+          Dashboard - Monitoramento de impressoras
+        </h2>
+        <p class="descricao_projeto">
+          Dashbord para monitoramento em tempo real de impressoras corporativas via snmp. Acompamento de
+          disponibilidade, nível de toner e logs.
+        </p>
+
+        <div class="project-tags">
+          <span>Grafana</span>
+          <span>SNMP</span>
+          <span>Zabbix</span>
+        </div>
+
+        <div class="desenvolvimento_container">
+          <!-- SEÇÃO: PROBLEMA -->
+          <div class="secao-problema">
+            <h3><span class="text-green">></span> Problema a ser resolvido</h3>
+
+            <p class="descricao_problema">A checagem do status das impressoras era feita manualmente, com visitas
+              presenciais duas vezes ao dia em setores críticos como UTI, Emergência e Laboratórios. O responsável
+              precisava imprimir relatórios de consumíveis, deslocar-se entre os setores e verificar visualmente a
+              necessidade de troca de toner ou presença de falhas. O processo era repetitivo, impreciso e consumia
+              horas de trabalho diário da equipe de TI, além do alto volume de impressões realizadas ao imprimir o
+              "relatório de consumiveis".</p>
+            <img style="max-width: 400px;" class="img_evidencia" src="imagens/relatorio-ronda.png"
+              alt="Relatório de Ronda Manual">
+          </div>
+
+          <!-- SEÇÃO: SOLUÇÃO -->
+          <div class="secao-solucao">
+            <h3><span class="text-green">></span> Solução Implementada</h3>
+            <p>Dashboard desenvolvido, sendo exibido no televisor na sala da TI:</p>
+            <p>A solução acompanha, em tempo real, o nível de toner e o status das impressoras em todos os setores do
+              hospital, eliminando a necessidade de rondas.</p>
+
+
+            <img src="./imagens/dashbord_impressoras.gif" alt="GIF Dashboard" class="img-dash dash-preview">
+
+          </div>
+
+          <!-- SEÇÃO: RESULTADOS -->
+          <div class="secao-resultados">
+            <h3><span class="text-green">></span> Resultados Estratégicos</h3>
+            <ul class="lista-resultados">
+              <li><span class="marker"></span> Aperfeiçoamento do suporte; redução de 80% nas visitas presenciais.
+              </li>
+              <li><span class="marker"></span> Liberação de tempo da equipe de TI para demandas estratégicas.</li>
+              <!-- ... outros itens -->
+            </ul>
+          </div>
+        </div><!--CONTEUDO CONTAINER-->
+      </div><!--printProject -->
+
+
+
+      <!--########################## MIKROTIK PROJECT#################-->
+
+      <div class="mikrotikProject projeto" id="projetomikrotik">
+        <h2 class="title-projeto_conteudo">
+          🚀 Dashboard de Monitoramento Mikrotik com Alertas Visuais em Tempo Real
+
+        </h2>
+        <p class="descricao_projeto">
+          Dashbord desenvolvido usando o plugin HTML Graphics do grafana, que permite controle total dos elementos, o
+          equipamento monitorado é o route OS que está sendo virtualizado no Eve-NG
+        </p>
+
+        <div class="project-tags">
+          <span>Grafana</span>
+          <span>SNMP</span>
+          <span>Zabbix</span>
+          <span>HTML Graphics</span>
+          <span>Eve-ng</span>
+        </div>
+
+        <div class="desenvolvimento_container">
+
+          <div style="margin: 1rem 0 1rem 0;" class="problematizacao">
+            <h3><span class="text-green"><svg style="vertical-align: middle;" xmlns="http://www.w3.org/2000/svg"
+                  width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-server-crash-icon lucide-server-crash">
+                  <path d="M6 10H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2" />
+                  <path d="M6 14H4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2h-2" />
+                  <path d="M6 6h.01" />
+                  <path d="M6 18h.01" />
+                  <path d="m13 6-4 6h6l-4 6" />
+                </svg></span> Problema</h3>
+            <p>
+              Ambiente sem visibilidade clara de latência e falhas em tempo real,
+              dificultando atuação rápida da equipe de TI.</p>
+          </div><!--problematizacao-->
+
+          <section class="objetivo">
+            <h3><span class="text-green">></span> Objetivo do monitoramento</h3>
+            <ul style="margin-bottom: 2rem;">
+              <li>✔ Redução de tempo de diagnóstico de falhas.</li>
+              <li>✔ Alertas visuais dinâmicos para tomada de decisão rápida.</li>
+              <li>✔ Visualização em tempo real de latência e disponibilidade.</li>
+            </ul>
+          </section>
+
+          <!-- SEÇÃO: EVIDENCIA -->
+          <div class="secao-evidencia">
+            <h3><span class="text-green">></span> Dashbord</h3>
+
+            <img class="img_evidencia" src="imagens/MIKROTIK_MONITORAMENTO.png" alt="Dashbord mikrotik no grafana">
+          </div>
+
+
+          <!-- SEÇÃO: SOLUÇÃO -->
+          <div class="secao-solucao">
+            <h3><span class="text-green"></span></h3>
+            <p>Com total controle de construção dos componentes, incluindo lógica, comportamento e visual dos alertas.
+            </p>
+
+            <p>Ex:</p>
+            <img style="max-width: 200px;" src="./imagens/responseTimePainel.png" alt="Response Time Image">
+          </div>
+
+
+
+          <!--################################ HTML #######################################-->
+          <div class="code">
+            <div class="code-header">
+              <span>HTML</span>
+
+            </div>
+            <pre>
+  <code>
+&lt;section class="icmp_responseTime container"&gt;
+  &lt;svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-timer-icon lucide-timer"&gt;
+    &lt;line x1="10" x2="14" y1="2" y2="2"/&gt;
+    &lt;line x1="12" x2="15" y1="14" y2="11"/&gt;
+    &lt;circle cx="12" cy="14" r="8"/&gt;
+  &lt;/svg&gt;
+  &lt;span class="title"&gt;Response Time&lt;/span&gt;
+  &lt;span class="value" id="responseTime_value"&gt;/span&gt;
+&lt;/section&gt;
+  </code>
+</pre>
+          </div>
+
+          <p>Acesso o indice no arquivo json recebido do zabbix: <span
+              style="font-style: italic; color: hsl(142, 72%, 50%);"> const responseSerie =
+              data.series[0]?.fields[3];</span></p>
+
+          <!--################## JAVA SCRIPT ################-->
+          <div class="code">
+            <div class="code-header">
+              <span>JAVA SCRIPT</span>
+
+            </div><!--CODE-HEADER-->
+            <pre>
+                  <code>
+const responseText = htmlNode.getElementById('responseTime_value')
+
+const responseSerie = data.series[0]?.fields[3];
+
+if(responseSerie && responseSerie.values){
+
+  📌 Captura do último valor de latência vindo do Zabbix:
+  const responseValorSegundos = responseSerie.values.get(responseSerie.values.length -1);
+  valorMs = responseValorSegundos * 1000;
+
+  📌 Adiciona sting ms no final e deixa apenas com duas casas decimais.
+  responseText.textContent = valorMs.toFixed(2) + "ms"
+
+  📌 Aplicação de lógica de severidade (OK / Warning / Critical):
+
+  if(valorMs < 50){
+    responseText.style.color = "#00ff88"; // Verde (Excelente)
+  } else if (valorMs >= 50){
+     responseText.style.color = "#ffcc00"; // Amarelo (Médio/Atenção)
+  } else{
+    responseText.style.color = "#ff4b4b"; // Vermelho (Alto/Crítico)
+  }
+}  else { 
+  responseText.textContent = "Aguardando"; 
+  responseText.style.color = "#666";
+}
+                  </code>
+                </pre>
+          </div><!--CODE-->
+
+          <p>De maneira dinâmica, com base nos valores recebidos, malipulo como os itens são apresentados, no exemplo
+            abaixo, alterei minha regra momentaneamente para explificar, de modo que se o valor recebido for > que
+            0.50, chama uma class do css que contem a animação que pode ser observada abaixo.</p>
+          <img class="dash-preview" src="imagens/alert_style.gif" alt="Alerta Response Time">
+
+        </div><!--##################desenvolvimento_container-->
+      </div><!--#### mikrotikProject ###-->
+
+
+
+
+
+      <!--########################## SERVER WINDOWS PROJECT#################-->
+
+      <div class="monitoraWindows projeto" id="monitoraWindows">
+        <h2 class="title-projeto_conteudo">
+          <svg width="30px" height="30px" class="iconeTitulo" viewBox="0 0 20 20" version="1.1"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"
+            transform="matrix(-1, 0, 0, 1, 0, 0)">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
+              stroke-width="0.28"></g>
+            <g id="SVGRepo_iconCarrier">
+              <title>windows [#174]</title>
+              <desc>Created with Sketch.</desc>
+              <defs> </defs>
+              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="Dribbble-Light-Preview" transform="translate(-60.000000, -7439.000000)" fill="#0078d6">
+                  <g id="icons" transform="translate(56.000000, 160.000000)">
+                    <path
+                      d="M13.1458647,7289.43426 C13.1508772,7291.43316 13.1568922,7294.82929 13.1619048,7297.46884 C16.7759398,7297.95757 20.3899749,7298.4613 23.997995,7299 C23.997995,7295.84873 24.002005,7292.71146 23.997995,7289.71311 C20.3809524,7289.71311 16.7649123,7289.43426 13.1458647,7289.43426 M4,7289.43526 L4,7296.22153 C6.72581454,7296.58933 9.45162907,7296.94113 12.1724311,7297.34291 C12.1774436,7294.71736 12.1704261,7292.0908 12.1704261,7289.46524 C9.44661654,7289.47024 6.72380952,7289.42627 4,7289.43526 M4,7281.84344 L4,7288.61071 C6.72581454,7288.61771 9.45162907,7288.57673 12.1774436,7288.57973 C12.1754386,7285.96017 12.1754386,7283.34361 12.1724311,7280.72405 C9.44461153,7281.06486 6.71679198,7281.42567 4,7281.84344 M24,7288.47179 C20.3879699,7288.48578 16.7759398,7288.54075 13.1619048,7288.55175 C13.1598997,7285.88921 13.1598997,7283.22967 13.1619048,7280.56914 C16.7689223,7280.01844 20.3839599,7279.50072 23.997995,7279 C24,7282.15826 23.997995,7285.31353 24,7288.47179"
+                      id="windows-[#174]"> </path>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </svg>
+          Dashboard de Monitoramento para Servidores Windows com Foco em Disponibilidade e Performance
+
+        </h2>
+        <p class="descricao_projeto">
+          Este projeto visa monitorar servidores windows que devem ter alta disponibilidade.
+        </p>
+
+        <div class="project-tags">
+          <span>Grafana</span>
+          <span>Windows</span>
+          <span>Zabbix</span>
+          <span>HTML Graphics</span>
+        </div>
+
+        <div class="desenvolvimento_container">
+
+          <div style="margin: 1rem 0 1rem 0;" class="problematizacao">
+            <h3><span class="text-green"><svg style="vertical-align: middle;" xmlns="http://www.w3.org/2000/svg"
+                  width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-server-crash-icon lucide-server-crash">
+                  <path d="M6 10H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2" />
+                  <path d="M6 14H4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2h-2" />
+                  <path d="M6 6h.01" />
+                  <path d="M6 18h.01" />
+                  <path d="m13 6-4 6h6l-4 6" />
+                </svg></span> Problema</h3>
+            <p>
+              Ambientes Windows frequentemente apresentam degradação de performance,
+              alto consumo de recursos e falhas de serviços críticos sem visibilidade centralizada,
+              dificultando a atuação rápida da equipe de TI.
+            </p>
+          </div><!--problematizacao-->
+
+          <section class="objetivo">
+            <h3><span class="text-green">></span> Objetivo do monitoramento</h3>
+            <ul style="margin-bottom: 2rem;">
+              <li>✔ Garantir visibilidade em tempo real da saúde do servidor.</li>
+              <li>✔ Monitorar consumo de CPU, memória e disco.</li>
+              <li>✔ Acompanhar status de serviços críticos.</li>
+              <li>✔ Reduzir tempo de resposta a incidentes.</li>
+            </ul>
+          </section>
+
+          <!-- SEÇÃO: EVIDENCIA -->
+          <div class="secao-evidencia">
+            <h3><span class="text-green">></span> Dashbord</h3>
+
+            <img class="img_evidencia" src="imagens/dashbordWindows.png" alt="Dashbord máquina Windows no grafana">
+          </div>
+
+
+          <!-- SEÇÃO: SOLUÇÃO -->
+          <div class="secao-solucao">
+            <h3><span class="text-green"></span></h3>
+            <p>
+              O dashboard realiza monitoramento contínuo de recursos e serviços,
+              gerando alertas visuais em cenários de degradação ou indisponibilidade.
+            </p>
+
+            <h3>
+              <svg fill="#24db67" width="30px" height="30px" viewBox="0 0 35 35" data-name="Layer 2" id="f3cb8d82-36fc-45b3-81de-6922a15d3e7e" xmlns="http://www.w3.org/2000/svg" stroke="#24db67"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M17.5,16.7a2,2,0,1,1,2-2A2,2,0,0,1,17.5,16.7Zm0-2h0Z"></path><path d="M28.559,34.75H6.441A4.2,4.2,0,0,1,2.25,30.559V4.442A4.2,4.2,0,0,1,6.441.25H28.559A4.2,4.2,0,0,1,32.75,4.442V30.559A4.2,4.2,0,0,1,28.559,34.75ZM6.441,2.75A1.694,1.694,0,0,0,4.75,4.442V30.559A1.693,1.693,0,0,0,6.441,32.25H28.559a1.693,1.693,0,0,0,1.691-1.691V4.442A1.694,1.694,0,0,0,28.559,2.75Z"></path><path d="M17.46,23.445a8.75,8.75,0,1,1,8.75-8.75A8.759,8.759,0,0,1,17.46,23.445Zm0-15a6.25,6.25,0,1,0,6.25,6.25A6.257,6.257,0,0,0,17.46,8.445Z"></path><path d="M8.2,7.45a1.251,1.251,0,0,0,0-2.5,1.251,1.251,0,0,0,0,2.5Z"></path><path d="M26.8,7.45a1.251,1.251,0,0,0,0-2.5,1.251,1.251,0,0,0,0,2.5Z"></path><path d="M8.2,29.67a1.251,1.251,0,0,0,0-2.5,1.251,1.251,0,0,0,0,2.5Z"></path><path d="M26.8,29.67a1.251,1.251,0,0,0,0-2.5,1.251,1.251,0,0,0,0,2.5Z"></path><path d="M10.46,24.31a1.251,1.251,0,0,1-.89-2.128l4.5-4.56a1.25,1.25,0,0,1,1.78,1.756l-4.5,4.56A1.246,1.246,0,0,1,10.46,24.31Z"></path></g></svg>
+              Armazenamento cheio</h3>
+            <img src="./imagens/AlertaSemArmazenamento.png" alt="Disco C cheio">
+          </div>
+
+          <p>Nesse dashbord de exemplo temos um servidor windows com o disco C: cheio, se não tiver sendo monitorado
+            pode acarretar em indisponibilidade da máquina.</p>
+          <p>Com a visualização do alerta de maneira proativa, o responsável pelo ativo acessará imediatamente para
+            realizar uma limpeza nos arquivos.</p>
+
+
+          <h3><span class="text-green"><svg height="30px" width="30px" version="1.1" id="_x32_"
+                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512"
+                xml:space="preserve" fill="#000000">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <style type="text/css">
+                    .st0 {
+                      fill: #666666;
+                    }
+                  </style>
+                  <g>
+                    <path class="st0"
+                      d="M499.139,318.571l-37.178-5.407c-2.329-0.178-4.336-1.642-5.228-3.8l-12.054-29.086 c-0.901-2.15-0.526-4.613,1-6.379l22.243-29.88c3.533-4.141,3.301-10.314-0.554-14.168l-17.602-17.594 c-3.846-3.854-10.029-4.104-14.159-0.553l-29.889,22.233c-1.758,1.518-4.238,1.91-6.38,1.018l-29.094-12.062 c-2.151-0.883-3.622-2.926-3.81-5.228l-5.389-37.169c-0.428-5.442-4.96-9.635-10.402-9.635h-24.893 c-5.45,0-9.983,4.193-10.402,9.635l-5.407,37.169c-0.17,2.32-1.642,4.345-3.792,5.228l-29.103,12.062 c-2.151,0.892-4.613,0.5-6.388-1.018l-29.872-22.233c-4.13-3.542-10.304-3.302-14.167,0.553l-17.594,17.594 c-3.854,3.854-4.086,10.028-0.554,14.168l22.234,29.888c1.508,1.758,1.91,4.229,1.009,6.371l-12.054,29.086 c-0.874,2.159-2.908,3.622-5.219,3.81l-37.195,5.398c-5.425,0.429-9.618,4.961-9.618,10.412v24.883 c0,5.442,4.194,9.993,9.618,10.403l37.195,5.398c2.311,0.188,4.345,1.659,5.219,3.81l12.054,29.086 c0.901,2.159,0.5,4.63-1.009,6.388l-22.234,29.889c-3.533,4.14-3.301,10.295,0.554,14.168l17.594,17.594 c3.863,3.854,10.037,4.086,14.167,0.544l29.872-22.243c1.775-1.498,4.237-1.9,6.388-0.998l29.103,12.044 c2.151,0.902,3.622,2.918,3.802,5.246l5.398,37.169c0.428,5.433,4.952,9.636,10.402,9.636h24.893c5.451,0,9.974-4.203,10.402-9.636 l5.389-37.169c0.188-2.328,1.659-4.344,3.81-5.246l29.103-12.044c2.142-0.902,4.622-0.5,6.379,0.998l29.881,22.243 c4.13,3.542,10.314,3.31,14.159-0.544l17.602-17.594c3.864-3.873,4.087-10.028,0.554-14.168l-22.243-29.889 c-1.499-1.758-1.9-4.229-1-6.388l12.054-29.086c0.892-2.151,2.899-3.622,5.228-3.81l37.178-5.398 c5.434-0.41,9.627-4.961,9.627-10.403v-24.883C508.766,323.532,504.573,319,499.139,318.571z M379.093,382.328 c-10.93,10.912-25.445,16.926-40.898,16.926c-15.444,0-29.978-6.014-40.898-16.926c-10.92-10.938-16.943-25.454-16.943-40.907 c0-15.444,6.022-29.969,16.943-40.89c10.92-10.939,25.454-16.934,40.898-16.934c15.454,0,29.969,5.995,40.898,16.934 c10.92,10.92,16.934,25.446,16.934,40.89C396.027,356.874,390.014,371.39,379.093,382.328z">
+                    </path>
+                    <path class="st0"
+                      d="M187.351,252.156c4.032-1.445,6.254-5.746,5.122-9.868l-5.898-28.854c-0.472-1.767,0.072-3.649,1.419-4.88 l18.263-16.621c1.338-1.222,3.284-1.588,4.97-0.946l27.961,8.466c3.989,1.508,8.485-0.294,10.306-4.166l8.297-17.656 c1.837-3.881,0.366-8.485-3.346-10.591l-24.339-16.14c-1.58-0.91-2.535-2.632-2.436-4.452l1.16-24.66 c0.098-1.829,1.186-3.444,2.838-4.194l26.008-13.874c3.898-1.74,5.781-6.218,4.336-10.215l-6.603-18.371 c-1.454-4.024-5.755-6.254-9.876-5.121l-28.863,5.879c-1.767,0.5-3.632-0.053-4.871-1.41L195.185,56.23 c-1.24-1.357-1.614-3.265-0.955-4.978l8.468-27.944c1.507-4.006-0.294-8.494-4.175-10.306l-17.648-8.306 c-3.872-1.821-8.494-0.366-10.608,3.354l-16.131,24.34c-0.902,1.58-2.623,2.533-4.444,2.445l-24.66-1.169 c-1.82-0.08-3.462-1.205-4.202-2.847L106.974,4.821c-1.758-3.898-6.219-5.782-10.234-4.336L78.379,7.096 c-4.024,1.446-6.254,5.738-5.112,9.859l5.888,28.872c0.482,1.748-0.062,3.64-1.418,4.862l-18.264,16.63 c-1.356,1.222-3.274,1.597-4.987,0.955l-27.944-8.476c-3.988-1.516-8.476,0.304-10.305,4.175L7.939,81.622 c-1.82,3.872-0.366,8.494,3.346,10.599l24.339,16.14c1.588,0.902,2.534,2.615,2.436,4.435l-1.16,24.66 c-0.071,1.838-1.187,3.444-2.837,4.193L8.055,155.522c-3.9,1.749-5.782,6.219-4.336,10.216l6.611,18.37 c1.445,4.024,5.746,6.254,9.859,5.131l28.881-5.906c1.749-0.482,3.64,0.071,4.862,1.427l16.612,18.255 c1.24,1.356,1.598,3.283,0.954,4.987l-8.466,27.944c-1.499,3.997,0.304,8.485,4.175,10.305l17.648,8.297 c3.881,1.829,8.493,0.357,10.608-3.346l16.122-24.348c0.91-1.57,2.623-2.534,4.452-2.428l24.661,1.16 c1.829,0.09,3.453,1.178,4.211,2.846l13.847,25.989c1.767,3.9,6.219,5.8,10.233,4.354L187.351,252.156z M148.229,172.296 c-11.394,4.095-23.714,3.524-34.68-1.633c-10.965-5.157-19.245-14.275-23.358-25.678c-4.095-11.402-3.524-23.714,1.634-34.67 c5.156-10.974,14.283-19.254,25.677-23.357c11.402-4.105,23.714-3.534,34.67,1.641c10.956,5.139,19.254,14.258,23.366,25.66 c4.096,11.403,3.516,23.706-1.632,34.672C168.731,159.886,159.621,168.183,148.229,172.296z">
+                    </path>
+                  </g>
+                </g>
+              </svg></span>Disponibilidade de Serviços</h3>
+          <p>Em ambientes corporativos, todos os serviços devem ter alta disponibilidade e em caso de falha, devem ser
+            detectada mesmo antes do usuário ser afetado!</p>
+          <p>Para exmplificar, vamos monitorar o serviço de Spooler de impressão, se ele não estiver em execução, as
+            impressoras dos colaboradores/clientes não irão imprimir(só se estiver configurada localmente.)</p>
+
+          <p>Para exemplificar, parei o serviço da máquina que está sendo monitorada!</p>
+          <img src="imagens/ServicoSpoolerParado.png" alt="Serviso Spooler de Impressao - aba serviços">
+
+          <p>Cerca de 1 minuto com o serviço parado, a notificação já pode ser observada no dashbord.</p>
+          <img src="./imagens/Alerta_servicoSpoolerParado.gif" alt="Gif Serviço Spooler de impressao parado!">
+
+          <p>Esse tipo de falha, se não monitorada, impacta diretamente operações do dia a dia,
+            como usuário sem conseguir imprimir.</p>
+
+          <p>Com essa abordagem, é possível identificar falhas antes do impacto ao usuário,
+            permitindo uma atuação rápida e reduzindo indisponibilidade dos serviços.</p>
+
+
+    </section><!--projeto_conteudo-->
+  </div><!--3333 FLEX #######-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- ========================================
+       FOOLTER
+  ======================================== -->
+  <footer class="footer">
+    <div class="container">
+      <p> © 2026 Kevin Carneiro — Todos os direitos reservados.</p>
+      </div>
+  </footer>
+
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>
